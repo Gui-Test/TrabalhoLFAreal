@@ -30,6 +30,12 @@ if|then|begin|end|procedure|function|while|do|Result        {
                  }
 
 coisa|;   {printf( "Uma coisa: %s\n", yytext ); return T_Alguma_Coisa;}
+
+{ID}">"{ID}|{ID}"<"{ID}|{DIGIT}+">"{ID}|{ID}">"{DIGIT}+|{DIGIT}+"<"{ID} {
+                printf( "Uma expressao logica: %s\n", yytext ); 
+                                        return T_Alguma_Coisa;
+        
+        }
      
 {ID}       { printf( "An identifier: %s\n", yytext ); return T_ID;}
      
